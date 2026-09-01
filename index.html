@@ -304,8 +304,19 @@
     background: #fff;
     border: 1px solid #e4ddc9;
     border-radius: 14px;
-    padding: 30px 26px;
+    overflow: hidden;
   }
+  .service-card .thumb{
+    aspect-ratio: 4 / 3;
+    background: var(--cream-alt);
+    overflow: hidden;
+  }
+  .service-card .thumb img{ width: 100%; height: 100%; object-fit: cover; }
+  .service-card .thumb.placeholder{
+    display:flex; align-items:center; justify-content:center;
+  }
+  .service-card .thumb.placeholder img{ width: 34px; height: auto; opacity: 0.28; object-fit: contain; }
+  .service-card .body{ padding: 24px 26px 28px; }
   .service-card .num{
     font-family:'Solitude'; font-size: 26px; color: var(--berry-light); margin-bottom: 14px; display:block;
   }
@@ -534,54 +545,84 @@
       </div>
       <div class="service-grid">
         <div class="service-card">
-          <span class="num">01</span>
-          <h3>Custom Splinting</h3>
-          <p>Upper-extremity splints to immobilise joints after injury, correct deformities and improve function.</p>
+          <div class="thumb"><img src="images/svc-custom-splinting.jpg" alt="A therapist preparing custom splinting material"></div>
+          <div class="body">
+            <span class="num">01</span>
+            <h3>Custom Splinting</h3>
+            <p>Upper-extremity splints to immobilise joints after injury, correct deformities and improve function.</p>
+          </div>
         </div>
         <div class="service-card">
-          <span class="num">02</span>
-          <h3>Oedema Management</h3>
-          <p>Compression therapy, taping, contrast bathing and mobilisation to aid recovery and reduce discomfort.</p>
+          <div class="thumb placeholder"><img src="images/hand-olive.png" alt=""></div>
+          <div class="body">
+            <span class="num">02</span>
+            <h3>Oedema Management</h3>
+            <p>Compression therapy, taping, contrast bathing and mobilisation to aid recovery and reduce discomfort.</p>
+          </div>
         </div>
         <div class="service-card">
-          <span class="num">03</span>
-          <h3>Wound Care</h3>
-          <p>Most hand injuries come with a wound, and treating it is part of treating the injury itself.</p>
+          <div class="thumb"><img src="images/wound-care.jpg" alt="A hand injury being examined during a treatment session"></div>
+          <div class="body">
+            <span class="num">03</span>
+            <h3>Wound Care</h3>
+            <p>Most hand injuries come with a wound, and treating it is part of treating the injury itself.</p>
+          </div>
         </div>
         <div class="service-card">
-          <span class="num">04</span>
-          <h3>Burn Rehabilitation</h3>
-          <p>Supporting physical and emotional recovery after a burn, to ease pain and regain function and comfort.</p>
+          <div class="thumb placeholder"><img src="images/hand-olive.png" alt=""></div>
+          <div class="body">
+            <span class="num">04</span>
+            <h3>Burn Rehabilitation</h3>
+            <p>Supporting physical and emotional recovery after a burn, to ease pain and regain function and comfort.</p>
+          </div>
         </div>
         <div class="service-card">
-          <span class="num">05</span>
-          <h3>Pressure Garments</h3>
-          <p>Custom-made garments for burn scarring, amputations, traumatic hand injuries and chronic nerve pain.</p>
+          <div class="thumb"><img src="images/custom-made.jpg" alt="A therapist hand-stitching a custom-made pressure garment"></div>
+          <div class="body">
+            <span class="num">05</span>
+            <h3>Pressure Garments</h3>
+            <p>Custom-made garments for burn scarring, amputations, traumatic hand injuries and chronic nerve pain.</p>
+          </div>
         </div>
         <div class="service-card">
-          <span class="num">06</span>
-          <h3>Scar Management</h3>
-          <p>Silicone gel dressings, pressure garments, massage and desensitisation to improve appearance and flexibility.</p>
+          <div class="thumb placeholder"><img src="images/hand-olive.png" alt=""></div>
+          <div class="body">
+            <span class="num">06</span>
+            <h3>Scar Management</h3>
+            <p>Silicone gel dressings, pressure garments, massage and desensitisation to improve appearance and flexibility.</p>
+          </div>
         </div>
         <div class="service-card">
-          <span class="num">07</span>
-          <h3>Nerve Injury &amp; Re-education</h3>
-          <p>Desensitisation, nerve glides, massage and splinting to support recovering and regenerating nerves.</p>
+          <div class="thumb"><img src="images/svc-nerve.jpg" alt="A therapist working with a client's hand during a treatment session"></div>
+          <div class="body">
+            <span class="num">07</span>
+            <h3>Nerve Injury &amp; Re-education</h3>
+            <p>Desensitisation, nerve glides, massage and splinting to support recovering and regenerating nerves.</p>
+          </div>
         </div>
         <div class="service-card">
-          <span class="num">08</span>
-          <h3>Work Readiness</h3>
-          <p>Close support through recovery from work injuries, strengthening hands and upper limbs for a safe return to work.</p>
+          <div class="thumb"><img src="images/svc-work-readiness.jpg" alt="Hand-strengthening tools used during a therapy session"></div>
+          <div class="body">
+            <span class="num">08</span>
+            <h3>Work Readiness</h3>
+            <p>Close support through recovery from work injuries, strengthening hands and upper limbs for a safe return to work.</p>
+          </div>
         </div>
         <div class="service-card">
-          <span class="num">09</span>
-          <h3>Taping</h3>
-          <p>Supporting muscles and joints and facilitating natural healing, without restricting range of motion.</p>
+          <div class="thumb"><img src="images/svc-taping.jpg" alt="A finger being taped with soft wrap during a treatment session"></div>
+          <div class="body">
+            <span class="num">09</span>
+            <h3>Taping</h3>
+            <p>Supporting muscles and joints and facilitating natural healing, without restricting range of motion.</p>
+          </div>
         </div>
         <div class="service-card">
-          <span class="num">10</span>
-          <h3>Red Light Therapy</h3>
-          <p>Low-level red light therapy for the hand, used to ease pain, calm inflammation and support tissue healing.</p>
+          <div class="thumb"><img src="images/redlight-therapy.jpg" alt="A client's hand under a red light therapy device"></div>
+          <div class="body">
+            <span class="num">10</span>
+            <h3>Red Light Therapy</h3>
+            <p>Low-level red light therapy for the hand, used to ease pain, calm inflammation and support tissue healing.</p>
+          </div>
         </div>
       </div>
     </div>
