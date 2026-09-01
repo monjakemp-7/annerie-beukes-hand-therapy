@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://annerie-beukes-hand-therapy.vercel.app/sitemap.xml
