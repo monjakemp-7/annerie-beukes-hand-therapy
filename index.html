@@ -323,6 +323,17 @@
   }
   .team-art img{ width: 100%; height: 100%; object-fit: cover; }
 
+  /* ---------- Therapist grid ---------- */
+  .therapist-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .therapist-card{
+    background: #fff; border: 1px solid #e4ddc9; border-radius: 14px;
+    padding: 28px 24px; text-align: center;
+  }
+  .therapist-card h3{ font-size: 19px; margin-bottom: 8px; }
+  .therapist-card .cred{ font-size: 14px; font-weight: 700; color: var(--berry-light); margin: 0 0 6px; }
+  .therapist-card .role{ font-size: 14px; color: #4a4a42; margin: 0; }
+  .therapist-card .role-af{ font-size: 12px; font-style: italic; color: #8a8a7e; margin: 2px 0 0; }
+
   /* ---------- Practice gallery ---------- */
   .practice-gallery{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
   .practice-gallery figure{
@@ -403,7 +414,7 @@
     .hero-grid, .about-grid, .team-wrap, .contact-grid, .wound-grid, .redlight-grid{ grid-template-columns: 1fr; }
     .redlight-art{ order: -1; }
     .hero-art, .about-art, .wound-art{ order: -1; }
-    .service-grid, .testimonial-grid{ grid-template-columns: repeat(2, 1fr); }
+    .service-grid, .testimonial-grid, .therapist-grid{ grid-template-columns: repeat(2, 1fr); }
     .practice-gallery{ grid-template-columns: repeat(2, 1fr); }
     .location-grid{ grid-template-columns: 1fr; }
     nav.main-nav{
@@ -417,7 +428,7 @@
     .menu-toggle{ display:block; }
   }
   @media (max-width: 620px){
-    .service-grid, .testimonial-grid{ grid-template-columns: 1fr; }
+    .service-grid, .testimonial-grid, .therapist-grid{ grid-template-columns: 1fr; }
     .hero{ padding: 50px 0 50px; }
     section{ padding: 60px 0; }
     .team-art{ grid-template-columns: repeat(3, 1fr); }
@@ -615,6 +626,42 @@
       </div>
       <div class="team-art">
         <img src="images/team-hands.jpg" alt="The Annerie Beukes Occupational & Hand Therapy team">
+      </div>
+    </div>
+  </section>
+
+  <!-- Therapist qualifications -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow">Qualifications</p>
+        <h2>Meet your therapists</h2>
+      </div>
+      <div class="therapist-grid">
+        <div class="therapist-card">
+          <h3>Annerie Beukes</h3>
+          <p class="cred">B.Arb. (UP), DHT. (UP)</p>
+          <p class="role">Occupational Therapist</p>
+          <p class="role-af">Arbeidsterapeut</p>
+        </div>
+        <div class="therapist-card">
+          <h3>Ancil Prinsloo</h3>
+          <p class="cred">B.Arb. (STELL), M.Sc.OT (UCT)</p>
+          <p class="role">Occupational Therapist</p>
+          <p class="role-af">Arbeidsterapeut</p>
+        </div>
+        <div class="therapist-card">
+          <h3>Leanne van Niekerk</h3>
+          <p class="cred">B.Arb. (STELL)</p>
+          <p class="role">Occupational Therapist</p>
+          <p class="role-af">Arbeidsterapeut</p>
+        </div>
+        <div class="therapist-card">
+          <h3>Hillétje Wiehahn</h3>
+          <p class="cred">B.Arb. (STELL)</p>
+          <p class="role">Occupational Therapist</p>
+          <p class="role-af">Arbeidsterapeut</p>
+        </div>
       </div>
     </div>
   </section>
