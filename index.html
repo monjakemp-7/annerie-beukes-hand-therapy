@@ -287,13 +287,13 @@
     order: 2;
   }
   .redlight-art img{ width: 100%; height: 100%; object-fit: cover; }
-  .redlight-copy p{ color:#4a4a42; margin-bottom: 0; }
 
   /* ---------- Services ---------- */
   .service-grid{
-    display:grid; grid-template-columns: repeat(3, 1fr); gap: 26px;
+    display:flex; flex-wrap:wrap; justify-content:center; gap: 26px;
   }
   .service-card{
+    flex: 0 0 calc((100% - 52px) / 3);
     background: #fff;
     border: 1px solid #e4ddc9;
     border-radius: 14px;
@@ -419,7 +419,8 @@
     .hero-grid, .about-grid, .team-wrap, .contact-grid, .redlight-grid{ grid-template-columns: 1fr; }
     .redlight-art{ order: -1; }
     .hero-art, .about-art{ order: -1; }
-    .service-grid, .testimonial-grid, .therapist-grid{ grid-template-columns: repeat(2, 1fr); }
+    .testimonial-grid, .therapist-grid{ grid-template-columns: repeat(2, 1fr); }
+    .service-card{ flex-basis: calc((100% - 26px) / 2); }
     .practice-gallery{ grid-template-columns: repeat(2, 1fr); }
     .location-grid{ grid-template-columns: 1fr; }
     nav.main-nav{
@@ -433,7 +434,8 @@
     .menu-toggle{ display:block; }
   }
   @media (max-width: 620px){
-    .service-grid, .testimonial-grid, .therapist-grid{ grid-template-columns: 1fr; }
+    .testimonial-grid, .therapist-grid{ grid-template-columns: 1fr; }
+    .service-card{ flex-basis: 100%; }
     .hero{ padding: 50px 0 50px; }
     section{ padding: 60px 0; }
     .team-art{ grid-template-columns: repeat(3, 1fr); }
@@ -522,7 +524,7 @@
         <p class="eyebrow">About the practice</p>
         <h2>The hand is complex,<br>and essential to everything you do.</h2>
         <p>Whether it's cooking a meal, working on the factory floor, typing at a desk or catching a ball, our hands carry us through daily life. When an injury or condition gets in the way, we help you get that function back.</p>
-        <p>Established in September 2000, Annerie Beukes has spent over 25 years providing specialised hand therapy to a wide variety of clients, from traumatic workplace injuries and fractures to tendon and nerve injuries, amputations, burns, and chronic conditions such as carpal tunnel syndrome, tennis and golfer's elbow, and arthritis. Whether you're recovering from an injury, surgery, or managing a chronic condition, our goal is to help you regain function and get back to what matters to you.</p>
+        <p>Established in September 2000, Annerie Beukes has spent over 25 years providing specialised hand therapy to a wide variety of clients, from traumatic workplace injuries and fractures to wounds, tendon and nerve injuries, amputations, ligament injuries, and burns, as well as chronic conditions such as carpal tunnel syndrome, tendon inflammation, tennis and golfer's elbow, and osteo and rheumatoid arthritis. Whether you're recovering from an injury, surgery, or managing a chronic condition, our goal is to help you regain function and get back to what matters to you.</p>
         <div class="credentials">
           Annerie Beukes &nbsp;·&nbsp; B. Arb (UP), DHT (UP) &nbsp;·&nbsp; Practice No. 6615643 &nbsp;·&nbsp; Est. 2000
         </div>
@@ -547,7 +549,7 @@
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb placeholder"><img src="images/hand-olive.png" alt=""></div>
+          <div class="thumb"><img src="images/svc-oedema.jpg" alt="A compression glove being fitted for oedema management"></div>
           <div class="body">
             <span class="num">02</span>
             <h3>Oedema Management</h3>
@@ -563,11 +565,11 @@
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb"><img src="images/svc-burn-rehab.jpg" alt="A healed burn scar on a client's forearm and hand"></div>
+          <div class="thumb"><img src="images/svc-burn-rehab.jpg" alt="A healed burn scar on a client's forearm and hand" style="object-position: center 82%;"></div>
           <div class="body">
             <span class="num">04</span>
             <h3>Burn Rehabilitation</h3>
-            <p>Supporting physical and emotional recovery after a burn, to ease pain and regain function and comfort.</p>
+            <p>Supporting physical and emotional recovery after a burn, easing pain and guiding you through the healing process to regain function and comfort.</p>
           </div>
         </div>
         <div class="service-card">
@@ -591,15 +593,15 @@
           <div class="body">
             <span class="num">07</span>
             <h3>Nerve Injury &amp; Re-education</h3>
-            <p>Desensitisation, nerve glides, massage and splinting to support recovering and regenerating nerves.</p>
+            <p>Desensitisation, nerve glides, massage, vibration and pressure therapy, and splinting to support recovering and regenerating nerves.</p>
           </div>
         </div>
         <div class="service-card">
           <div class="thumb"><img src="images/svc-work-readiness.jpg" alt="A grip-strength dynamometer used to assess hand strength"></div>
           <div class="body">
             <span class="num">08</span>
-            <h3>Work Readiness</h3>
-            <p>Close support through recovery from work injuries, strengthening hands and upper limbs for a safe return to work.</p>
+            <h3>Work Recommendations</h3>
+            <p>Working closely with you through recovery from a work injury, with tailored recommendations and hand and upper-limb strengthening for a safe return to work.</p>
           </div>
         </div>
         <div class="service-card">
@@ -611,19 +613,19 @@
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb"><img src="images/redlight-therapy.jpg" alt="A client's hand under a red light therapy device"></div>
+          <div class="thumb"><img src="images/svc-patient-education.jpg" alt="A therapist gently holding a client's hand"></div>
           <div class="body">
             <span class="num">10</span>
-            <h3>Red Light Therapy</h3>
-            <p>Low-level red light therapy for the hand, used to ease pain, calm inflammation and support tissue healing.</p>
+            <h3>Patient Education</h3>
+            <p>Guidance on your condition, home exercises and hand care, so you understand your recovery every step of the way.</p>
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb"><img src="images/svc-patient-education.jpg" alt="A therapist gently holding a client's hand"></div>
+          <div class="thumb"><img src="images/redlight-therapy.jpg" alt="A client's hand under a red light therapy device"></div>
           <div class="body">
             <span class="num">11</span>
-            <h3>Patient Education</h3>
-            <p>Guidance on your condition, home exercises and hand care, so you understand your recovery every step of the way.</p>
+            <h3>Red Light Therapy</h3>
+            <p>Low-level red light therapy for the hand, used to ease pain, calm inflammation and support tissue healing.</p>
           </div>
         </div>
       </div>
@@ -648,9 +650,9 @@
   <section class="section-olive" id="team">
     <div class="wrap team-wrap">
       <div class="team-copy">
-        <p class="eyebrow">Meet the team</p>
+        <p class="eyebrow">Meet our team</p>
         <h2>Care from a whole team, not just one therapist.</h2>
-        <p>Our team of experienced occupational and hand therapists brings a wealth of knowledge and compassion to every patient's care. Whichever location you visit, you're supported by a practice built on years of specialised experience.</p>
+        <p>Our team of highly skilled occupational therapists provides compassionate and effective care. Each member brings a wealth of knowledge and expertise to ensure our patients receive the highest standard of treatment. Whichever location you visit, you're supported by a practice built on years of specialised experience.</p>
         <a class="btn btn-outline-cream" href="#contact">Get in touch</a>
       </div>
       <div>
