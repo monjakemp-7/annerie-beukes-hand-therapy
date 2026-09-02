@@ -407,6 +407,8 @@
     background: #25D366; display:flex; align-items:center; justify-content:center;
     box-shadow: 0 6px 18px rgba(0,0,0,0.22);
   }
+  body.nav-open{ overflow: hidden; }
+  body.nav-open .wa-float{ display: none; }
 
   /* ---------- Mobile ---------- */
   @media (max-width: 900px){
@@ -864,8 +866,14 @@
   document.getElementById('year').textContent = new Date().getFullYear();
   const toggle = document.getElementById('menuToggle');
   const nav = document.getElementById('mainNav');
-  toggle.addEventListener('click', () => nav.classList.toggle('open'));
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    document.body.classList.toggle('nav-open', nav.classList.contains('open'));
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    document.body.classList.remove('nav-open');
+  }));
 
   const trustStrip = document.querySelector('.trust-strip');
   trustStrip.setAttribute('role', 'button');
