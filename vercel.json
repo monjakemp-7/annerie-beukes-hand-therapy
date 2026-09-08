@@ -1,16 +1,1 @@
-{
-  "redirects": [
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "www.paarlrehab.co.za" }],
-      "destination": "https://paarlrehab.co.za/",
-      "permanent": true
-    },
-    {
-      "source": "/:path+",
-      "has": [{ "type": "host", "value": "www.paarlrehab.co.za" }],
-      "destination": "https://paarlrehab.co.za/:path+",
-      "permanent": true
-    }
-  ]
-}
+{}

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://paarlrehab.co.za/sitemap.xml
+Sitemap: https://www.anneriebeukeshandtherapy.co.za/sitemap.xml
