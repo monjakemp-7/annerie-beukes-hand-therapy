@@ -104,6 +104,7 @@
 
 <style>
   @font-face { font-family: 'Riak'; src: url('fonts/Riak.otf') format('opentype'); font-display: swap; }
+  @font-face { font-family: 'Foriene'; src: url('fonts/Foriene-Italic.otf') format('opentype'); font-display: swap; }
   @font-face { font-family: 'Solitude'; src: url('fonts/Solitude.otf') format('opentype'); font-display: swap; }
   @font-face { font-family: 'Glacial'; src: url('fonts/GlacialIndifference-Regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
   @font-face { font-family: 'Glacial'; src: url('fonts/GlacialIndifference-Bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
@@ -113,8 +114,8 @@
     --olive-dark: #4d5540;
     --berry: #7a2e3d;
     --berry-light: #a4495a;
-    --cream: #f7f2e9;
-    --cream-alt: #efe8d8;
+    --cream: #e9e4d7;
+    --cream-alt: #e1dac6;
     --ink: #34342e;
     --max: 1160px;
   }
@@ -143,10 +144,11 @@
   }
   h1, h2, h3{
     font-family: 'Solitude', Georgia, serif;
-    font-weight: 400;
+    font-weight: 700;
     margin: 0 0 18px;
-    color: var(--ink);
+    color: #1f1f1a;
   }
+  h1{ font-weight: 400; }
   h2{ font-size: clamp(28px, 4vw, 40px); }
 
   .btn{
@@ -163,6 +165,8 @@
   }
   .btn-berry{ background: var(--berry); color: #fff; }
   .btn-berry:hover{ background: #632532; }
+  .btn-olive{ background: var(--olive-dark); color: var(--cream); }
+  .btn-olive:hover{ background: #3a402f; }
   .btn-outline{ background: transparent; border-color: var(--olive-dark); color: var(--olive-dark); }
   .btn-outline:hover{ background: var(--olive-dark); color: #fff; }
   .btn-outline-cream{ background: transparent; border-color: var(--cream); color: var(--cream); }
@@ -171,34 +175,34 @@
   /* ---------- Header ---------- */
   header{
     position: sticky; top: 0; z-index: 100;
-    background: rgba(247,242,233,0.97);
-    border-bottom: 1px solid #e4ddc9;
+    background: rgba(77,85,64,0.97);
+    border-bottom: 1px solid rgba(247,242,233,0.14);
   }
   .header-inner{
     display:flex; align-items:center; justify-content:space-between;
     padding: 14px 0;
   }
   .brand{ display:flex; align-items:center; gap: 10px; }
-  .brand img{ width: 40px; height: auto; }
-  .brand .word{ font-family:'Riak'; font-size: 30px; color: var(--olive-dark); line-height: 1; }
+  .brand img{ width: 68px; height: auto; }
+  .brand .word{ font-family:'Foriene'; font-size: 36px; color: var(--cream); line-height: 1; }
 
   nav.main-nav{ display:flex; align-items:center; gap: 24px; }
   nav.main-nav a{
-    font-size: 15px; letter-spacing: 0.03em; color: var(--ink);
+    font-size: 16px; letter-spacing: 0.03em; color: var(--cream);
     padding: 12px 4px; border-bottom: 2px solid transparent;
   }
-  nav.main-nav a:hover{ border-color: var(--berry); color: var(--berry); }
+  nav.main-nav a:hover{ border-color: #d9c9a8; color: #d9c9a8; }
 
   .header-cta{ display:flex; align-items:center; gap: 12px; }
   .icon-btn{
     width: 44px; height:44px; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
-    background: var(--olive); color:#fff;
+    background: var(--cream); color: var(--olive-dark);
   }
-  .icon-btn:hover{ background: var(--olive-dark); }
+  .icon-btn:hover{ background: #d9c9a8; }
 
   .menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding: 10px; }
-  .menu-toggle span{ display:block; width:24px; height:2px; background:var(--olive-dark); margin:5px 0; }
+  .menu-toggle span{ display:block; width:24px; height:2px; background:var(--cream); margin:5px 0; }
 
   /* ---------- Hero ---------- */
   .hero{
@@ -216,7 +220,7 @@
   }
   .hero-actions{ display:flex; gap: 14px; flex-wrap: wrap; }
   .hero-locations{
-    margin-top: 34px; display:flex; gap: 26px; font-size: 13px; color: var(--olive-dark); letter-spacing: 0.04em;
+    margin-top: 34px; display:flex; gap: 26px; font-size: 14px; color: var(--olive-dark); letter-spacing: 0.04em;
   }
   .hero-locations span{ display:inline-flex; align-items:center; gap: 6px; font-weight:700; }
   .hero-locations .pin{ color: var(--berry); flex-shrink:0; }
@@ -266,7 +270,7 @@
   .about-copy p{ color:#4a4a42; margin-bottom: 16px; }
   .credentials{
     margin-top: 24px; padding-top: 20px; border-top: 1px solid #d8d0ba;
-    font-size: 14px; color: var(--olive-dark); letter-spacing: 0.02em;
+    font-size: 15px; color: var(--olive-dark); letter-spacing: 0.02em;
   }
   .about-art{
     background: var(--cream-alt);
@@ -295,8 +299,10 @@
   .redlight-art .art-main, .redlight-art .art-detail{ aspect-ratio: 2 / 3; }
 
   /* ---------- Services ---------- */
+  .swipe-hint{ display:none; }
+  .carousel-dots{ display:none; }
   .service-grid{
-    display:flex; flex-wrap:wrap; justify-content:center; gap: 26px;
+    display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap: 26px;
   }
   .service-card{
     flex: 0 0 calc((100% - 52px) / 3);
@@ -315,12 +321,14 @@
     display:flex; align-items:center; justify-content:center;
   }
   .service-card .thumb.placeholder img{ width: 34px; height: auto; opacity: 0.28; object-fit: contain; }
-  .service-card .body{ padding: 24px 26px 28px; }
-  .service-card .num{
-    font-family:'Solitude'; font-size: 26px; color: var(--berry-light); margin-bottom: 14px; display:block;
-  }
+  .service-card .body{ padding: 24px 26px 28px; height: 232px; box-sizing: border-box; overflow: hidden; }
   .service-card h3{ font-size: 19px; margin-bottom: 10px; }
-  .service-card p{ font-size: 15px; color:#4a4a42; margin:0; }
+  .service-card h3 .alt-name{
+    font-family:'Glacial', system-ui, sans-serif; font-weight:400;
+    font-size: 16px; letter-spacing:0.02em; color: var(--berry-light);
+    display:block; margin-top: 4px;
+  }
+  .service-card p{ font-size: 16px; color:#4a4a42; margin:0; }
 
   /* ---------- Team ---------- */
   .team-wrap{ display:grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items:center; }
@@ -332,7 +340,7 @@
     overflow:hidden;
   }
   .team-art img{ width: 100%; height: 100%; object-fit: cover; }
-  .team-caption{ margin: 14px 0 0; font-size: 13px; color: #b9c0ac; text-align: center; line-height: 1.7; }
+  .team-caption{ margin: 14px 0 0; font-size: 14px; color: #c3ccb6; text-align: center; line-height: 1.7; }
 
   /* ---------- Therapist grid ---------- */
   .therapist-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
@@ -341,15 +349,23 @@
     padding: 28px 24px; text-align: center;
   }
   .therapist-card h3{ font-size: 19px; margin-bottom: 8px; }
-  .therapist-card .cred{ font-size: 14px; font-weight: 700; color: var(--berry-light); margin: 0 0 6px; }
-  .therapist-card .role{ font-size: 14px; color: #4a4a42; margin: 0; }
-  .therapist-card .role-af{ font-size: 12px; font-style: italic; color: #8a8a7e; margin: 2px 0 0; }
+  .therapist-card .cred{ font-size: 15px; font-weight: 700; color: var(--berry-light); margin: 0 0 6px; }
+  .therapist-card .role{ font-size: 15px; color: #4a4a42; margin: 0; }
+  .therapist-card .role-af{ font-size: 13px; font-style: italic; color: #76766a; margin: 2px 0 0; }
+
+  .support-team{ margin-top: 50px; max-width: 680px; margin-left:auto; margin-right:auto; text-align:center; }
+  .support-photo{
+    border-radius: 16px; overflow:hidden; aspect-ratio: 3 / 2;
+    border: 1px solid #d8d0ba;
+  }
+  .support-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .support-caption{ margin: 16px 0 0; font-size: 15px; color: var(--olive-dark); }
+  .support-caption strong{ color: var(--ink); }
 
   /* ---------- Practice gallery ---------- */
-  .practice-gallery{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
   .practice-gallery figure{
-    margin:0; border-radius: 14px; overflow:hidden;
-    border: 1px solid #e4ddc9; aspect-ratio: 3 / 4;
+    margin:0; border-radius: 16px; overflow:hidden;
+    border: 1px solid #e4ddc9; aspect-ratio: 3 / 2; max-width: 860px; margin: 0 auto;
   }
   .practice-gallery img{ width:100%; height:100%; object-fit:cover; }
 
@@ -361,8 +377,8 @@
     background: #fff; border: 1px solid #e4ddc9; border-radius: 14px; padding: 28px 24px;
   }
   .testimonial-card .stars{ color: #8a6a2a; letter-spacing: 2px; font-size: 15px; margin-bottom: 14px; }
-  .testimonial-card p{ font-size: 15px; color:#4a4a42; margin: 0 0 18px; line-height:1.6; }
-  .testimonial-name{ font-size: 13px; font-weight: 700; color: var(--olive-dark); }
+  .testimonial-card p{ font-size: 16px; color:#4a4a42; margin: 0 0 18px; line-height:1.6; }
+  .testimonial-name{ font-size: 14px; font-weight: 700; color: var(--olive-dark); }
 
   /* ---------- Locations ---------- */
   .location-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 28px; }
@@ -375,35 +391,18 @@
   .location-card .eyebrow{ margin-bottom: 8px; }
   .location-card address{ font-style:normal; color:#4a4a42; margin: 10px 0 18px; line-height:1.7; }
   .location-contact{ list-style:none; padding:0; margin: 0 0 20px; }
-  .location-contact li{ display:flex; align-items:center; gap: 10px; padding: 5px 0; font-size: 14px; color:#4a4a42; }
+  .location-contact li{ display:flex; align-items:center; gap: 10px; font-size: 15px; color:#4a4a42; }
   .location-contact li svg{ color: var(--berry); flex-shrink:0; }
+  .location-contact li a{ display:inline-block; padding: 11px 0; }
   .location-contact li a:hover{ color: var(--berry); text-decoration: underline; }
-  .location-card a.map-link{ display:inline-block; padding: 6px 0; font-size: 14px; font-weight:700; color: var(--berry); letter-spacing:0.03em; }
+  .location-card a.map-link{ display:inline-block; padding: 10px 0; font-size: 15px; font-weight:700; color: var(--berry); letter-spacing:0.03em; }
   .location-card a.map-link:hover{ text-decoration: underline; }
 
-  /* ---------- Contact ---------- */
-  .contact-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items:start; }
-  .contact-list{ list-style:none; padding:0; margin: 26px 0 0; }
-  .contact-list li{
-    display:flex; align-items:center; gap: 14px;
-    padding: 16px 0; border-bottom: 1px solid rgba(247,242,233,0.18);
-  }
-  .contact-list .ico{
-    width:38px; height:38px; border-radius:50%; background: rgba(247,242,233,0.12);
-    display:flex; align-items:center; justify-content:center; flex-shrink:0;
-  }
-  .contact-list a:hover{ text-decoration: underline; }
-  .contact-art{
-    border-radius: 16px;
-    aspect-ratio: 4 / 3.4;
-    overflow: hidden;
-  }
-  .contact-art img{ width: 100%; height: 100%; object-fit: cover; }
 
   /* ---------- Footer ---------- */
-  footer{ background: #3b4033; color: #cfc9b5; padding: 40px 0; font-size: 14px; }
+  footer{ background: #3b4033; color: #cfc9b5; padding: 40px 0; font-size: 15px; }
   .footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: 16px; }
-  .footer-inner .word{ font-family:'Riak'; font-size: 22px; color: var(--cream); }
+  .footer-inner .word{ font-family:'Foriene'; font-size: 26px; color: var(--cream); }
 
   /* ---------- Floating WhatsApp ---------- */
   .wa-float{
@@ -417,12 +416,11 @@
 
   /* ---------- Mobile ---------- */
   @media (max-width: 900px){
-    .hero-grid, .about-grid, .team-wrap, .contact-grid, .redlight-grid{ grid-template-columns: 1fr; }
+    .hero-grid, .about-grid, .team-wrap, .redlight-grid{ grid-template-columns: 1fr; }
     .redlight-art{ order: -1; }
     .hero-art, .about-art{ order: -1; }
     .testimonial-grid, .therapist-grid{ grid-template-columns: repeat(2, 1fr); }
     .service-card{ flex-basis: calc((100% - 26px) / 2); }
-    .practice-gallery{ grid-template-columns: repeat(2, 1fr); }
     .location-grid{ grid-template-columns: 1fr; }
     nav.main-nav{
       position: fixed; inset: 0; top: 70px;
@@ -431,18 +429,49 @@
       transform: translateX(100%); transition: transform 0.25s ease;
     }
     nav.main-nav.open{ transform: translateX(0); }
-    nav.main-nav a{ font-size: 18px; }
+    nav.main-nav a{ font-size: 18px; color: var(--ink); }
     .menu-toggle{ display:block; }
   }
   @media (max-width: 620px){
-    .testimonial-grid, .therapist-grid{ grid-template-columns: 1fr; }
-    .service-card{ flex-basis: 100%; }
+    .therapist-grid{ grid-template-columns: 1fr; }
     .hero{ padding: 50px 0 50px; }
     section{ padding: 60px 0; }
     .team-art{ grid-template-columns: repeat(3, 1fr); }
-    .brand .word{ font-size: 22px; }
-    .brand img{ width: 32px; }
+    .brand .word{ font-size: 26px; }
+    .brand img{ width: 38px; }
     .header-cta .btn{ padding: 10px 18px; font-size: 13px; }
+
+    .swipe-hint{
+      display:flex; align-items:center; justify-content:center; gap:7px;
+      font-size:13px; font-weight:700; letter-spacing:0.02em;
+      color: var(--olive-dark); margin: -10px 0 20px;
+    }
+    .service-grid{
+      display:flex; flex-wrap:nowrap; justify-content:flex-start; gap:16px;
+      overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+      margin: 0 -28px; padding: 4px 28px 10px; scroll-padding-left:28px;
+      scrollbar-width:none;
+    }
+    .service-grid::-webkit-scrollbar{ display:none; }
+    .service-card{ flex:0 0 82%; scroll-snap-align:start; }
+    .carousel-dots{
+      display:flex; justify-content:center; align-items:center; gap:8px; margin-top:20px;
+    }
+    .carousel-dots span{
+      width:7px; height:7px; border-radius:50%; background:#d3cbb4; flex-shrink:0;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .carousel-dots span.active{ background: var(--berry); transform: scale(1.35); }
+    .service-card .body{ height:auto; min-height: 210px; overflow:visible; }
+
+    .testimonial-grid{
+      display:flex; flex-wrap:nowrap; justify-content:flex-start; gap:16px;
+      overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+      margin: 0 -28px; padding: 4px 28px 10px; scroll-padding-left:28px;
+      scrollbar-width:none;
+    }
+    .testimonial-grid::-webkit-scrollbar{ display:none; }
+    .testimonial-card{ flex:0 0 82%; scroll-snap-align:start; }
   }
 </style>
 </head>
@@ -451,7 +480,7 @@
 <header>
   <div class="wrap header-inner">
     <a class="brand" href="#top">
-      <img src="images/hand-olive.png" alt="Annerie Beukes hand therapy logo">
+      <img src="images/hand-cream.png" alt="Annerie Beukes hand therapy logo">
       <span class="word">Annerie Beukes</span>
     </a>
     <nav class="main-nav" id="mainNav">
@@ -459,13 +488,12 @@
       <a href="#services">Services</a>
       <a href="#team">Team</a>
       <a href="#locations">Locations</a>
-      <a href="#contact">Contact</a>
     </nav>
     <div class="header-cta">
       <a class="icon-btn" href="https://wa.me/27647896927?text=Hi%20Annerie%2C%20I%27d%20like%20to%20book%20an%20appointment." aria-label="WhatsApp" target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm5.2 14.2c-.22.62-1.28 1.2-1.77 1.24-.45.05-1.02.07-1.65-.1-.38-.11-.87-.28-1.5-.55-2.64-1.14-4.36-3.8-4.5-3.98-.13-.18-1.08-1.43-1.08-2.73 0-1.3.68-1.94.93-2.2.24-.27.53-.34.7-.34.18 0 .35 0 .5.01.16.01.38-.06.6.46.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.14.29-.27.44-.13.16-.28.35-.4.47-.13.13-.27.28-.12.55.16.27.7 1.16 1.51 1.88 1.04.93 1.91 1.22 2.18 1.36.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.27.13.44.2.51.31.07.11.07.65-.15 1.27Z" fill="currentColor"/></svg>
       </a>
-      <a class="btn btn-outline" href="tel:+27218721040">Call</a>
+      <a class="btn btn-outline-cream" href="tel:+27218721040">Call</a>
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
@@ -481,7 +509,8 @@
         <h1>Restoring movement,<br>restoring life.</h1>
         <p class="lead">Specialised hand therapy for injuries, burns, nerve conditions and chronic pain, from a team that understands just how much your hands do for you every day.</p>
         <div class="hero-actions">
-          <a class="btn btn-berry" href="https://wa.me/27647896927?text=Hi%20Annerie%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book via WhatsApp</a>
+          <a class="btn btn-berry" href="https://wa.me/27647896927?text=Hi%20Annerie%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book Paarl via WhatsApp</a>
+          <a class="btn btn-olive" href="https://wa.me/27607098632?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book Malmesbury via WhatsApp</a>
           <a class="btn btn-outline" href="tel:+27218721040">021 872 1040</a>
         </div>
         <div class="hero-locations">
@@ -490,7 +519,7 @@
         </div>
       </div>
       <div class="hero-art">
-        <img src="images/hero-hand.jpg" alt="A hand reaching, softly lit">
+        <img src="images/hero-hand.jpg" alt="Watercolour illustration of two hands clasped together">
       </div>
     </div>
   </section>
@@ -519,7 +548,7 @@
   <section class="section-alt" id="about">
     <div class="wrap about-grid">
       <div class="about-art">
-        <img src="images/about-hands.jpg" alt="An experienced hand gently supporting another">
+        <img loading="lazy" src="images/about-annerie.jpg" alt="Annerie Beukes smiling in her garden">
       </div>
       <div class="about-copy">
         <p class="eyebrow">About the practice</p>
@@ -540,96 +569,90 @@
         <p class="eyebrow">What we treat</p>
         <h2>Our services</h2>
       </div>
-      <div class="service-grid">
+      <p class="swipe-hint">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M4 12h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Swipe to see all services
+      </p>
+      <div class="service-grid" id="serviceGrid">
         <div class="service-card">
-          <div class="thumb"><img src="images/svc-custom-splinting.jpg" alt="A client wearing a custom wrist splint during treatment"></div>
+          <div class="thumb"><img loading="lazy" src="images/redlight-therapy.jpg" alt="A client's hand under a red light therapy device"></div>
           <div class="body">
-            <span class="num">01</span>
+            <h3>Photobiomodulation <span class="alt-name">(Red Light Therapy- RLT)</span></h3>
+            <p>Low-level light that stimulates cellular energy, widening blood vessels and boosting circulation to speed wound repair, reduce pain and inflammation.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="thumb"><img loading="lazy" src="images/svc-custom-splinting.jpg" alt="A client wearing a custom wrist splint during treatment"></div>
+          <div class="body">
             <h3>Custom Splinting</h3>
-            <p>Upper-extremity splints to immobilise joints after injury, correct deformities and improve function.</p>
+            <p>Upper-extremity splints to immobilise joints after injury, correct deformities, protect healing tissue and improve overall hand function.</p>
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb"><img src="images/svc-oedema.jpg" alt="A therapist fitting a client's hand into a beige compression glove for oedema management"></div>
+          <div class="thumb"><img loading="lazy" src="images/svc-oedema.jpg" alt="A hand wearing a beige fingerless compression glove for oedema management"></div>
           <div class="body">
-            <span class="num">02</span>
             <h3>Oedema Management</h3>
-            <p>Compression therapy, taping, contrast bathing and mobilisation to aid recovery and reduce discomfort.</p>
+            <p>We use a variety of techniques for oedema management, including compression therapy, taping, contrast bathing and mobilisation, aiding recovery and reducing discomfort.</p>
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb"><img src="images/wound-care.jpg" alt="A therapist wrapping a client's wrist and hand in gauze bandaging"></div>
+          <div class="thumb"><img loading="lazy" src="images/wound-care.jpg" alt="A therapist wrapping a client's wrist and hand in gauze bandaging"></div>
           <div class="body">
-            <span class="num">03</span>
             <h3>Wound Care</h3>
-            <p>Most hand injuries come with a wound, so proper wound care is treated as an essential part of your recovery.</p>
+            <p>Most hand injuries come with a wound, so proper cleaning, dressing and monitoring is treated as an essential part of your recovery.</p>
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb"><img src="images/svc-burn-rehab.jpg" alt="A healed burn scar on a client's forearm and hand"></div>
+          <div class="thumb"><img loading="lazy" src="images/svc-burn-rehab.jpg" alt="A healed burn scar on a client's forearm and hand"></div>
           <div class="body">
-            <span class="num">04</span>
             <h3>Burn Rehabilitation</h3>
             <p>Supporting physical and emotional recovery after a burn, easing pain and guiding you through the healing process to regain function and comfort.</p>
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb"><img src="images/svc-pressure-garments.jpg" alt="A client wearing a custom-made beige compression glove over a healing forearm"></div>
+          <div class="thumb"><img loading="lazy" src="images/svc-pressure-garments.jpg" alt="A client wearing a custom-made beige compression glove over a healing forearm"></div>
           <div class="body">
-            <span class="num">05</span>
             <h3>Pressure Garments</h3>
-            <p>Custom-made garments for burn scarring, amputations, traumatic hand injuries and chronic nerve pain.</p>
+            <p>Custom-made compression garments for burn scarring, amputations, traumatic hand injuries and chronic nerve pain, worn to support healing.</p>
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb"><img src="images/svc-scar-management.jpg" alt="A therapist providing hands-on treatment during a scar management session"></div>
+          <div class="thumb"><img loading="lazy" src="images/svc-scar-management.jpg" alt="A therapist using a handheld device for scar management treatment on a client's forearm"></div>
           <div class="body">
-            <span class="num">06</span>
             <h3>Scar Management</h3>
-            <p>Silicone gel dressings, pressure garments, massage and desensitisation to improve appearance and flexibility.</p>
+            <p>Silicone gel dressings, pressure garments, scar massage and desensitisation to improve the appearance and flexibility of scarring from hand injuries and burns.</p>
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb"><img src="images/svc-nerve.jpg" alt="A therapist massaging a client's forearm during nerve re-education treatment"></div>
+          <div class="thumb"><img loading="lazy" src="images/svc-nerve.jpg" alt="A therapist massaging a client's forearm during nerve re-education treatment"></div>
           <div class="body">
-            <span class="num">07</span>
             <h3>Nerve Injury &amp; Re-education</h3>
-            <p>Desensitisation, nerve glides, massage, vibration and pressure therapy, and splinting to support recovering and regenerating nerves.</p>
+            <p>Desensitisation, nerve glides, massage, vibration and pressure therapy, and splinting to support nerves that are still recovering and regenerating.</p>
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb"><img src="images/svc-work-readiness.jpg" alt="A grip-strength dynamometer used to assess hand strength"></div>
+          <div class="thumb"><img loading="lazy" src="images/svc-work-readiness.jpg" alt="A hand gripping a dynamometer to measure grip strength"></div>
           <div class="body">
-            <span class="num">08</span>
             <h3>Work Recommendations</h3>
             <p>Working closely with you through recovery from a work injury, with tailored recommendations and hand and upper-limb strengthening for a safe return to work.</p>
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb"><img src="images/svc-taping.jpg" alt="A finger being taped with soft wrap during a treatment session"></div>
+          <div class="thumb"><img loading="lazy" src="images/svc-taping.jpg" alt="A thumb and hand wrapped in colourful patterned taping"></div>
           <div class="body">
-            <span class="num">09</span>
             <h3>Taping</h3>
-            <p>Supporting muscles and joints and facilitating natural healing, without restricting range of motion.</p>
+            <p>Supporting muscles and joints during recovery, facilitating natural healing and correct movement, without restricting your range of motion.</p>
           </div>
         </div>
         <div class="service-card">
-          <div class="thumb"><img src="images/svc-patient-education.jpg" alt="A therapist guiding a client through a shape-sorting exercise at a desk"></div>
+          <div class="thumb"><img loading="lazy" src="images/svc-patient-education.jpg" alt="A therapist guiding a client through a shape-sorting exercise at a desk"></div>
           <div class="body">
-            <span class="num">10</span>
             <h3>Patient Education</h3>
             <p>Guidance on your condition, home exercises and hand care, so you understand your recovery every step of the way.</p>
           </div>
         </div>
-        <div class="service-card">
-          <div class="thumb"><img src="images/redlight-therapy.jpg" alt="A client's hand under a red light therapy device"></div>
-          <div class="body">
-            <span class="num">11</span>
-            <h3>Red Light Therapy</h3>
-            <p>Low-level red light therapy for the hand, used to ease pain, calm inflammation and support tissue healing.</p>
-          </div>
-        </div>
       </div>
+      <div class="carousel-dots" id="serviceDots" aria-hidden="true"></div>
     </div>
   </section>
 
@@ -642,8 +665,8 @@
         <p>From thermoplastic splints to pressure garments, everything is measured, cut and stitched in-house, giving you a precise, comfortable fit made specifically for your hand. Because everything is made on-site, adjustments can be made on the spot, so you leave with a fit that's right the first time.</p>
       </div>
       <div class="redlight-art">
-        <div class="art-tile art-main"><img src="images/custom-made.jpg" alt="A therapist cutting fabric to make a custom pressure garment"></div>
-        <div class="art-tile art-detail"><img src="images/custom-made-detail.jpg" alt="Close-up of hands stitching fabric on a sewing machine"></div>
+        <div class="art-tile art-main"><img loading="lazy" src="images/custom-made.jpg" alt="A therapist cutting fabric to make a custom pressure garment"></div>
+        <div class="art-tile art-detail"><img loading="lazy" src="images/custom-made-detail.jpg" alt="Close-up of hands stitching fabric on a sewing machine"></div>
       </div>
     </div>
   </section>
@@ -655,13 +678,13 @@
         <p class="eyebrow">Meet our team</p>
         <h2>Care from a whole team, not just one therapist.</h2>
         <p>Our team of highly skilled occupational therapists provides compassionate and effective care. Each member brings a wealth of knowledge and expertise to ensure our patients receive the highest standard of treatment. Whichever location you visit, you're supported by a practice built on years of specialised experience.</p>
-        <a class="btn btn-outline-cream" href="#contact">Get in touch</a>
+        <a class="btn btn-outline-cream" href="#locations">Get in touch</a>
       </div>
       <div>
         <div class="team-art">
-          <img src="images/team-hands.jpg" alt="From left: Hillétje Wiehahn, Annerie Beukes, Leanne van Niekerk, Anneke de Wit, Ancil Prinsloo, Kirsty Thompson.">
+          <img loading="lazy" src="images/team-hands.jpg" alt="Back row from left: Ancil Prinsloo, Annerie Beukes, Hillétje Wiehahn. Front row from left: Anneke de Wit, Leanne van Niekerk, Kirsty Thompson.">
         </div>
-        <p class="team-caption">From left: Hillétje Wiehahn, Annerie Beukes, Leanne van Niekerk, Anneke de Wit, Ancil Prinsloo, Kirsty Thompson</p>
+        <p class="team-caption">Back row from left: Ancil Prinsloo, Annerie Beukes, Hillétje Wiehahn<br>Front row from left: Anneke de Wit, Leanne van Niekerk, Kirsty Thompson</p>
       </div>
     </div>
   </section>
@@ -699,6 +722,12 @@
           <p class="role-af">Arbeidsterapeut</p>
         </div>
       </div>
+      <div class="support-team">
+        <div class="support-photo">
+          <img loading="lazy" src="images/support-team.jpg" alt="Anneke de Wit and Kirsty Thompson at the practice reception desk">
+        </div>
+        <p class="support-caption"><strong>Anneke de Wit</strong> · Practice Manager &nbsp;&middot;&nbsp; <strong>Kirsty Thompson</strong> · Receptionist</p>
+      </div>
     </div>
   </section>
 
@@ -711,16 +740,7 @@
       </div>
       <div class="practice-gallery">
         <figure>
-          <img src="images/practice-building.jpg" alt="The historic Paarl building housing the practice">
-        </figure>
-        <figure>
-          <img src="images/practice-entrance.jpg" alt="The practice's welcoming waiting area">
-        </figure>
-        <figure>
-          <img src="images/practice-reception.jpg" alt="Reception desk at Annerie Beukes Occupational & Hand Therapy">
-        </figure>
-        <figure>
-          <img src="images/practice-room.jpg" alt="A treatment room set up for hand therapy">
+          <img loading="lazy" src="images/practice-building.jpg" alt="The historic 1899 Paarl building housing the practice, on the corner of Breda Street">
         </figure>
       </div>
     </div>
@@ -733,7 +753,11 @@
         <p class="eyebrow">What clients say</p>
         <h2>Google reviews from real patients</h2>
       </div>
-      <div class="testimonial-grid">
+      <p class="swipe-hint">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M4 12h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Swipe to see all reviews
+      </p>
+      <div class="testimonial-grid" id="testimonialGrid">
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p>&ldquo;Friendly, efficient and effective.&rdquo;</p>
@@ -755,11 +779,12 @@
           <div class="testimonial-name">Jolynn April</div>
         </div>
       </div>
+      <div class="carousel-dots" id="testimonialDots" aria-hidden="true"></div>
     </div>
   </section>
 
   <!-- Locations -->
-  <section class="section-cream" id="locations">
+  <section class="section-olive" id="locations">
     <div class="wrap">
       <div class="section-head center">
         <p class="eyebrow">Where to find us</p>
@@ -827,34 +852,6 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="section-olive" id="contact">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="eyebrow">Get in touch</p>
-        <h2>Ready to get started?</h2>
-        <p style="color:#e4dfd0;">Reach out via WhatsApp, phone or email, whichever is easiest for you.</p>
-        <ul class="contact-list">
-          <li>
-            <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4.5 4h3.4l1.6 4.2-2 1.6a12.6 12.6 0 0 0 6.7 6.7l1.6-2 4.2 1.6v3.4c0 .8-.7 1.5-1.5 1.4C10.6 20.4 3.6 13.4 3.1 5.5 3 4.7 3.7 4 4.5 4Z" stroke="#f7f2e9" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
-            <a href="tel:+27218721040">021 872 1040</a>
-          </li>
-          <li>
-            <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm5.2 14.2c-.22.62-1.28 1.2-1.77 1.24-.45.05-1.02.07-1.65-.1-.38-.11-.87-.28-1.5-.55-2.64-1.14-4.36-3.8-4.5-3.98-.13-.18-1.08-1.43-1.08-2.73 0-1.3.68-1.94.93-2.2.24-.27.53-.34.7-.34.18 0 .35 0 .5.01.16.01.38-.06.6.46.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.14.29-.27.44-.13.16-.28.35-.4.47-.13.13-.27.28-.12.55.16.27.7 1.16 1.51 1.88 1.04.93 1.91 1.22 2.18 1.36.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.27.13.44.2.51.31.07.11.07.65-.15 1.27Z" fill="#f7f2e9"/></svg></span>
-            <a href="https://wa.me/27647896927?text=Hi%20Annerie%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">064 789 6927 (WhatsApp)</a>
-          </li>
-          <li>
-            <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#f7f2e9" stroke-width="1.7"/><path d="m4 6.5 8 6 8-6" stroke="#f7f2e9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <a href="mailto:info@paarlrehab.co.za">info@paarlrehab.co.za</a>
-          </li>
-        </ul>
-      </div>
-      <div class="contact-art">
-        <img src="images/contact-reception.jpg" alt="Annerie Beukes seated in the practice's reception area">
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <footer>
@@ -890,6 +887,33 @@
   trustStrip.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); togglePause(); }
   });
+
+  function initCarousel(gridId, dotsId, cardSelector) {
+    const grid = document.getElementById(gridId);
+    const dotsWrap = document.getElementById(dotsId);
+    const cards = grid.querySelectorAll(cardSelector);
+    cards.forEach(() => dotsWrap.appendChild(document.createElement('span')));
+    const dots = dotsWrap.querySelectorAll('span');
+    const setActiveDot = () => {
+      const gridLeft = grid.getBoundingClientRect().left;
+      let closest = 0, closestDist = Infinity;
+      cards.forEach((card, i) => {
+        const dist = Math.abs(card.getBoundingClientRect().left - gridLeft);
+        if (dist < closestDist) { closestDist = dist; closest = i; }
+      });
+      dots.forEach((d, i) => d.classList.toggle('active', i === closest));
+    };
+    let ticking = false;
+    grid.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => { setActiveDot(); ticking = false; });
+        ticking = true;
+      }
+    });
+    setActiveDot();
+  }
+  initCarousel('serviceGrid', 'serviceDots', '.service-card');
+  initCarousel('testimonialGrid', 'testimonialDots', '.testimonial-card');
 </script>
 
 </body>
