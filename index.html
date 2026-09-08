@@ -47,8 +47,10 @@
         "@type": "Person",
         "name": "Annerie Beukes",
         "jobTitle": "Occupational Therapist (Hand Therapy)",
-        "honorificSuffix": "B. Arb (UP), DHT (UP)"
+        "honorificSuffix": "B. Arb (UP), DHT (UP)",
+        "sameAs": ["https://www.linkedin.com/in/annerie-beukes-233089233/"]
       },
+      "sameAs": ["https://www.linkedin.com/company/144929020/"],
       "description": "Specialised occupational therapy practice focused on hand therapy, hand injury treatment and burn wound management, in practice since 2000."
     },
     {
@@ -290,6 +292,10 @@
     margin-top: 24px; padding-top: 20px; border-top: 1px solid #d8d0ba;
     font-size: 15px; color: var(--olive-dark); letter-spacing: 0.02em;
   }
+  .credentials .linkedin-link{
+    display: inline-flex; vertical-align: middle; margin-left: 6px; color: var(--olive-dark);
+  }
+  .credentials .linkedin-link:hover{ color: var(--berry); }
   .about-art{
     background: var(--cream-alt);
     border: 1px solid #e4ddc9;
@@ -421,6 +427,9 @@
   footer{ background: #3b4033; color: #cfc9b5; padding: 40px 0; font-size: 15px; }
   .footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: 16px; }
   .footer-inner .word{ font-family:'Foriene'; font-size: 26px; color: var(--cream); }
+  .word-group{ display:inline-flex; align-items:center; gap:10px; }
+  .footer-inner .linkedin-link{ display:inline-flex; color: #cfc9b5; }
+  .footer-inner .linkedin-link:hover{ color: #d9c9a8; }
 
   /* ---------- Floating WhatsApp ---------- */
   .wa-float{
@@ -574,7 +583,8 @@
         <p>Whether it's cooking a meal, working on the factory floor, typing at a desk or catching a ball, our hands carry us through daily life. When an injury or condition gets in the way, we help you get that function back.</p>
         <p>Established in September 2000, Annerie Beukes has spent over 25 years providing specialised hand therapy to a wide variety of clients, from traumatic workplace injuries and fractures to wounds, tendon and nerve injuries, amputations, ligament injuries, and burns, as well as chronic conditions such as carpal tunnel syndrome, tendon inflammation, tennis and golfer's elbow, and osteo and rheumatoid arthritis. Whether you're recovering from an injury, surgery, or managing a chronic condition, our goal is to help you regain function and get back to what matters to you.</p>
         <div class="credentials">
-          Annerie Beukes &nbsp;·&nbsp; B. Arb (UP), DHT (UP) &nbsp;·&nbsp; Practice No. 6615643 &nbsp;·&nbsp; Est. 2000
+          Annerie Beukes<a class="linkedin-link" href="https://www.linkedin.com/in/annerie-beukes-233089233/" target="_blank" rel="noopener" aria-label="Annerie Beukes on LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.94 6 2.5 6S0 4.88 0 3.5 1.04 1 2.48 1 4.98 2.12 4.98 3.5ZM.24 8.25h4.5V23H.24V8.25Zm7.13 0h4.31v2.02h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 3 5.39 6.9V23h-4.5v-6.98c0-1.67-.03-3.81-2.32-3.81-2.33 0-2.69 1.82-2.69 3.7V23h-4.5V8.25Z"/></svg></a>
+          &nbsp;·&nbsp; B. Arb (UP), DHT (UP) &nbsp;·&nbsp; Practice No. 6615643 &nbsp;·&nbsp; Est. 2000
         </div>
       </div>
     </div>
@@ -882,7 +892,12 @@
 
 <footer>
   <div class="wrap footer-inner">
-    <span class="word">Annerie Beukes</span>
+    <span class="word-group">
+      <span class="word">Annerie Beukes</span>
+      <a class="linkedin-link" href="https://www.linkedin.com/company/144929020/" target="_blank" rel="noopener" aria-label="Annerie Beukes Occupational & Hand Therapy on LinkedIn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.94 6 2.5 6S0 4.88 0 3.5 1.04 1 2.48 1 4.98 2.12 4.98 3.5ZM.24 8.25h4.5V23H.24V8.25Zm7.13 0h4.31v2.02h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 3 5.39 6.9V23h-4.5v-6.98c0-1.67-.03-3.81-2.32-3.81-2.33 0-2.69 1.82-2.69 3.7V23h-4.5V8.25Z"/></svg>
+      </a>
+    </span>
     <span>&copy; <span id="year"></span> Annerie Beukes Occupational &amp; Hand Therapy · Paarl &amp; Malmesbury</span>
   </div>
 </footer>
