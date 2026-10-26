@@ -537,6 +537,9 @@
       scrollbar-width:none;
     }
     .testimonial-grid::-webkit-scrollbar{ display:none; }
+    /* Spare track so the last card can snap to the same start edge as the first.
+       Stays in step with the 82% card width and 16px gap above. */
+    .testimonial-grid::after{ content:""; flex:0 0 calc(18% - 16px); }
     .testimonial-card,
     .testimonial-card:nth-child(4),
     .testimonial-card:nth-child(5),
